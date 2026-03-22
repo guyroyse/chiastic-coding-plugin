@@ -2,9 +2,6 @@
 name: task-pair-implementer
 description: TDD implementation role for chiastic pair programming. Use when instructed to make failing tests pass as part of a red/green/refactor cycle.
 user-invocable: false
-metadata:
-  version: 0.1.0
-  author: Guy Royse
 ---
 
 # Implementer Role

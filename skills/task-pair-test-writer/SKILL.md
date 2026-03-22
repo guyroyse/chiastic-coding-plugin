@@ -2,9 +2,6 @@
 name: task-pair-test-writer
 description: TDD test-writing role for chiastic pair programming. Use when instructed to write failing tests for a behavior as part of a red/green/refactor cycle.
 user-invocable: false
-metadata:
-  version: 0.1.0
-  author: Guy Royse
 ---
 
 # Test Writer Role

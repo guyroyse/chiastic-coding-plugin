@@ -2,9 +2,6 @@
 name: task-pair
 description: Context for agents working as a TDD pair. Explains the pair dynamic, role swapping, and how agents collaborate through code.
 user-invocable: false
-metadata:
-  version: 0.1.0
-  author: Guy Royse
 ---
 
 # Task Pair Context

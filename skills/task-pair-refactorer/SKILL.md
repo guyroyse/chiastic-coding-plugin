@@ -2,9 +2,6 @@
 name: task-pair-refactorer
 description: TDD refactoring role for chiastic pair programming. Use when instructed to review and refactor code as part of a red/green/refactor cycle.
 user-invocable: false
-metadata:
-  version: 0.1.0
-  author: Guy Royse
 ---
 
 # Refactorer Role
