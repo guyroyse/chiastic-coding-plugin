@@ -6,7 +6,7 @@ const { parseArgs } = require('util')
 main()
 
 function main() {
-  const { behavior, maxCycles } = parseArguments()
+  const { behavior, maxCycles, noSquash } = parseArguments()
 
   console.log()
   console.log(`=== task pairing ===`)
@@ -37,10 +37,12 @@ function main() {
     cycle++
   }
 
-  try {
-    squashCommits(commitCount, `feat: ${behavior}`)
-  } catch (err) {
-    reportError(behavior, commitCount, err.message)
+  if (!noSquash) {
+    try {
+      squashCommits(commitCount, `feat: ${behavior}`)
+    } catch (err) {
+      reportError(behavior, commitCount, err.message)
+    }
   }
 
   reportComplete(behavior, commitCount)
@@ -50,19 +52,21 @@ function parseArguments() {
   const { values } = parseArgs({
     options: {
       behavior: { type: 'string' },
-      maxCycles: { type: 'string' }
+      maxCycles: { type: 'string' },
+      noSquash: { type: 'boolean' }
     }
   })
 
   const behavior = values.behavior
   const maxCycles = Number(values.maxCycles ?? 5)
+  const noSquash = values.noSquash ?? false
 
   if (!behavior) {
     console.error('Usage: pair.js --behavior <description>')
     process.exit(1)
   }
 
-  return { behavior, maxCycles }
+  return { behavior, maxCycles, noSquash }
 }
 
 function createInitialRoles() {

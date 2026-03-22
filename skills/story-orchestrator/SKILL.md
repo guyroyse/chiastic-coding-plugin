@@ -2,7 +2,7 @@
 name: story-orchestrator
 description: Orchestrates a TDD pair programming workflow from a Gherkin feature file. Use when given a .feature file to implement.
 disable-model-invocation: true
-argument-hint: <path-to-feature-file>
+argument-hint: <path-to-feature-file> [--max-cycles <n>] [--no-squash]
 metadata:
   version: 0.1.0
   author: Guy Royse
@@ -14,7 +14,7 @@ You orchestrate a TDD pair programming workflow. You receive a Gherkin feature f
 
 ## Process
 
-1. Read the Gherkin feature file at the path provided: $ARGUMENTS
+1. Parse `$ARGUMENTS` to extract the feature file path and any optional flags (`--max-cycles <n>`, `--no-squash`). Flags not provided should use defaults.
 2. Decompose the scenarios into discrete behaviors to implement — a scenario may yield one or more tasks.
 3. Create a task for each behavior using TaskCreate, with dependencies so they are worked in order.
 4. For each behavior, in sequence:
@@ -28,8 +28,10 @@ You orchestrate a TDD pair programming workflow. You receive a Gherkin feature f
 Invoke the pair script from the skill directory:
 
 ```bash
-${CLAUDE_SKILL_DIR}/scripts/pair.js --behavior "<behavior description>"
+${CLAUDE_SKILL_DIR}/scripts/pair.js --behavior "<behavior description>" [--maxCycles <n>] [--noSquash]
 ```
+
+Pass through `--maxCycles` and `--noSquash` if they were provided in `$ARGUMENTS`. Otherwise, omit them and let `pair.js` use its defaults.
 
 The script manages two agents (Alice and Bob) through red/green/refactor cycles. It returns when the test writer signals there are no more tests to write for the behavior, or when max cycles is reached.
 
