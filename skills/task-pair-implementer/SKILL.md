@@ -1,5 +1,5 @@
 ---
-name: chiastic-task-pair-implementer
+name: task-pair-implementer
 description: TDD implementation role for chiastic pair programming. Use when instructed to make failing tests pass as part of a red/green/refactor cycle.
 user-invocable: false
 metadata:

@@ -1,5 +1,5 @@
 ---
-name: chiastic-task-pair
+name: task-pair
 description: Context for agents working as a TDD pair. Explains the pair dynamic, role swapping, and how agents collaborate through code.
 user-invocable: false
 metadata:

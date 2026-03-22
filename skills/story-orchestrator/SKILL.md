@@ -1,5 +1,5 @@
 ---
-name: chiastic-story-orchestrator
+name: story-orchestrator
 description: Orchestrates a TDD pair programming workflow from a Gherkin feature file. Use when given a .feature file to implement.
 disable-model-invocation: true
 argument-hint: <path-to-feature-file>

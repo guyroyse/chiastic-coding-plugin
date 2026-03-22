@@ -1,5 +1,5 @@
 ---
-name: chiastic-task-pair-test-writer
+name: task-pair-test-writer
 description: TDD test-writing role for chiastic pair programming. Use when instructed to write failing tests for a behavior as part of a red/green/refactor cycle.
 user-invocable: false
 metadata:

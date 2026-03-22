@@ -1,0 +1,31 @@
+{
+  "name": "chiastic",
+  "owner": {
+    "name": "Guy Royse",
+    "email": "guy@guy.dev"
+  },
+  "metadata": {
+    "description": "A Claude Code plugin that orchestrates AI agents into Agile team patterns through a Chiastic Coding workflow",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "chiastic",
+      "source": {
+        "source": "github",
+        "repo": "guyroyse/chiastic-coding-plugin"
+      },
+      "description": "A Claude Code plugin that orchestrates AI agents into Agile team patterns through a Chiastic Coding workflow",
+      "version": "0.1.0",
+      "author": {
+        "name": "Guy Royse",
+        "email": "guy@guy.dev"
+      },
+      "homepage": "https://github.com/guyroyse/chiastic-coding-plugin",
+      "repository": "https://github.com/guyroyse/chiastic-coding-plugin",
+      "license": "MIT",
+      "keywords": ["tdd", "testing", "pair-programming", "ai-agents"],
+      "category": "development"
+    }
+  ]
+}

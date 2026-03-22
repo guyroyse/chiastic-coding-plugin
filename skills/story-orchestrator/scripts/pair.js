@@ -50,12 +50,12 @@ function parseArguments() {
   const { values } = parseArgs({
     options: {
       behavior: { type: 'string' },
-      maxCycles: { type: 'number' }
+      maxCycles: { type: 'string' }
     }
   })
 
   const behavior = values.behavior
-  const maxCycles = values.maxCycles ?? 5
+  const maxCycles = Number(values.maxCycles ?? 5)
 
   if (!behavior) {
     console.error('Usage: pair.js --behavior <description>')
@@ -229,25 +229,25 @@ function shellQuote(str) {
 }
 
 function pairIntro(agent) {
-  return `Use the chiastic-task-pair skill to understand how you work. Your name is ${agent.name}.`
+  return `Use the task-pair skill to understand how you work. Your name is ${agent.name}.`
 }
 
 function startWritingTests(agent, behavior) {
-  return `${pairIntro(agent)} Use the chiastic-task-pair-test-writer skill. The behavior to specify: ${behavior}. Write failing tests for this behavior.`
+  return `${pairIntro(agent)} Use the task-pair-test-writer skill. The behavior to specify: ${behavior}. Write failing tests for this behavior.`
 }
 
 function continueWritingTests(behavior) {
-  return `Use the chiastic-task-pair-test-writer skill. Continue specifying the behavior: ${behavior}. Review what's already tested and implemented, then write the next failing test(s) if any remain. If the behavior is fully covered, signal complete.`
+  return `Use the task-pair-test-writer skill. Continue specifying the behavior: ${behavior}. Review what's already tested and implemented, then write the next failing test(s) if any remain. If the behavior is fully covered, signal complete.`
 }
 
 function startMakingTestsPass(agent) {
-  return `${pairIntro(agent)} Use the chiastic-task-pair-implementer skill. Make the failing tests pass. Look at the recent changes to understand what tests were added.`
+  return `${pairIntro(agent)} Use the task-pair-implementer skill. Make the failing tests pass. Look at the recent changes to understand what tests were added.`
 }
 
 function makeTestsPass() {
-  return `Use the chiastic-task-pair-implementer skill. Make the failing tests pass. Look at the recent changes to understand what tests were added.`
+  return `Use the task-pair-implementer skill. Make the failing tests pass. Look at the recent changes to understand what tests were added.`
 }
 
 function reviewAndRefactor() {
-  return `Use the chiastic-task-pair-refactorer skill. Review the current implementation and tests. Refactor if improvements are warranted, otherwise move on.`
+  return `Use the task-pair-refactorer skill. Review the current implementation and tests. Refactor if improvements are warranted, otherwise move on.`
 }
