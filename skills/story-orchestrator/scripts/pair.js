@@ -214,7 +214,7 @@ function gitCommit(phase, agentName, message) {
 
   // commit the changes with a message that includes the phase and agent name
   const commitMsg = `[${phase}] ${agentName}: ${message}`
-  execSync(`git commit -m ${shellQuote(commitMsg)}`, { encoding: 'utf-8' })
+  execSync(`git commit --author ${shellQuote(`${agentName} <${agentName.toLowerCase()}@chiastic>`)} -m ${shellQuote(commitMsg)}`, { encoding: 'utf-8' })
 
   console.log(`  committed: ${commitMsg}`)
 

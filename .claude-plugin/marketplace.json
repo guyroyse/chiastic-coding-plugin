@@ -12,7 +12,7 @@
         "repo": "guyroyse/chiastic-coding-plugin"
       },
       "description": "A Claude Code plugin that orchestrates AI agents into Agile team patterns through a Chiastic Coding workflow",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "author": {
         "name": "Guy Royse",
         "email": "guy@guy.dev"
